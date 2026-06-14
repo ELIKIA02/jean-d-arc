@@ -1,0 +1,22 @@
+{
+  "name": "Jean d'Arc — Sublimez vos Lectures",
+  "short_name": "Jean d'Arc",
+  "description": "Une application professionnelle pour extraire, formater et organiser les meilleurs extraits de livres.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E3A5F",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo_pwa_gold.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo_pwa_gold.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

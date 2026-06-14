@@ -1,0 +1,14 @@
+# wrangler.toml — Cloudflare Pages project config
+# Docs: https://developers.cloudflare.com/pages/
+
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "npm run pages:build"
+output_dir = "dist"
+
+[env.production]
+# Add your GEMINI_API_KEY as a secret via:
+#   npx wrangler pages secret put GEMINI_API_KEY
+# Or set it in the Cloudflare Dashboard → Pages → your-project → Settings → Environment variables

@@ -1,0 +1,6 @@
+{
+  "name": "Jean d'Arc",
+  "description": "Une application professionnelle pour extraire, formater et organiser les meilleurs extraits de livres pour les réseaux sociaux.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
