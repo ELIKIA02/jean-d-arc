@@ -507,7 +507,7 @@ export default function App() {
                   <div className="text-center space-y-4 py-8">
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gold/10 text-gold text-2xl border border-gold/30 shadow-inner">⚜️</div>
                     <h2 className="font-serif text-4xl sm:text-5xl font-extrabold tracking-tight text-royal dark:text-gold max-w-2xl mx-auto uppercase">
-                      {isFrench ? "Sublimez vos Lectures littéraires" : "Elevate bookish influence"}
+                      {isFrench ? "Transformez vos livres en publications virales" : "Elevate bookish influence"}
                     </h2>
                     <p className="text-zinc-500 max-w-2xl mx-auto text-base sm:text-lg dark:text-zinc-400 leading-relaxed font-serif">
                       {isFrench 
