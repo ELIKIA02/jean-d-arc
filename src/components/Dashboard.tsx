@@ -188,7 +188,7 @@ export default function Dashboard({
                 {stats.themeList.map((item, index) => (
                   <div key={item.name} className="space-y-1.5">
                     <div className="flex justify-between items-center text-xs">
-                      <span className="font-serif font-bold uppercase text-zinc-850 dark:text-zinc-200">
+                      <span className="font-serif font-bold uppercase text-zinc-800 dark:text-zinc-200">
                         ⚜️ {item.name}
                       </span>
                       <span className="font-mono text-zinc-400">
@@ -212,12 +212,12 @@ export default function Dashboard({
 
             {/* TYPES OF CONTENT BREAKDOWN */}
             <div className="border-t border-gold/15 pt-5 space-y-4">
-              <h4 className="font-serif text-xs font-bold uppercase text-zinc-750 dark:text-zinc-300 tracking-wider">
+              <h4 className="font-serif text-xs font-bold uppercase text-zinc-700 dark:text-zinc-300 tracking-wider">
                 {isFrench ? "Typologies Littéraires" : "Structural Taxonomy"}
               </h4>
               <div className="grid grid-cols-2 gap-3">
                 {stats.typeList.slice(0, 4).map((type) => (
-                  <div key={type.name} className="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 dark:bg-zinc-950 dark:border-zinc-850 flex items-center justify-between">
+                  <div key={type.name} className="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 dark:bg-zinc-950 dark:border-zinc-800 flex items-center justify-between">
                     <div>
                       <p className="font-serif text-[10px] font-bold uppercase text-royal dark:text-gold">{type.name}</p>
                       <p className="font-mono text-[9px] text-zinc-400 uppercase mt-0.5">{type.percent}%</p>

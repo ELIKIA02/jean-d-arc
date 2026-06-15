@@ -162,7 +162,7 @@ export default function ExtractSection({
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder={isFrench ? "Rechercher un mot clé..." : "Filter by keywords..."}
-              className="w-full rounded-lg border border-gold/20 bg-white/60 py-2 pl-9 pr-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-850 text-zinc-805 dark:text-zinc-100"
+              className="w-full rounded-lg border border-gold/20 bg-white/60 py-2 pl-9 pr-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
             />
           </div>
 
@@ -173,7 +173,7 @@ export default function ExtractSection({
               id="excerpts-sort-selector"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="w-full rounded-lg border border-gold/20 bg-white/60 p-2 text-xs dark:bg-zinc-850 text-zinc-805 dark:text-zinc-100"
+              className="w-full rounded-lg border border-gold/20 bg-white/60 p-2 text-xs dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
             >
               <option value="page">📍 {isFrench ? "Ordre chronologique des pages" : "Chronological Pages"}</option>
               <option value="alpha">🔤 {isFrench ? "Ordre alphabétique" : "Alphabetical Quote"}</option>
@@ -255,7 +255,7 @@ export default function ExtractSection({
                 value={groupedPreviewText}
                 readOnly
                 rows={5}
-                className="w-full text-xs font-mono p-3 border border-gold/20 rounded-lg bg-white/70 dark:bg-zinc-800/80 outline-hidden focus:ring-1 focus:ring-gold"
+                className="w-full text-xs font-mono p-3 border border-gold/20 rounded-lg bg-white/70 dark:bg-zinc-800/80 outline-none focus:ring-1 focus:ring-gold"
               />
               <p className="font-mono text-[9px] text-zinc-400 mt-1 italic text-right">
                 {isFrench ? "Mise à jour en temps réel des citations sélectionnées" : "Reflects active checkboxes in real-time formatting"}

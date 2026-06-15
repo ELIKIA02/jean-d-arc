@@ -312,7 +312,7 @@ export default function ExportPanel({
             )}
             
             {/* Tab switchers */}
-            <div className="flex rounded-lg bg-zinc-805 p-1 border border-zinc-700 max-w-sm mt-4">
+            <div className="flex rounded-lg bg-zinc-800 p-1 border border-zinc-700 max-w-sm mt-4">
               <button
                 type="button"
                 id="tab-exporter-files"
@@ -369,7 +369,7 @@ export default function ExportPanel({
                             handleExportWord();
                             setShowFormatDropdown(false);
                           }}
-                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-750 transition-colors text-left"
+                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-700 transition-colors text-left"
                         >
                           <span className="text-2xl">📘</span>
                           <div className="flex-1">
@@ -385,7 +385,7 @@ export default function ExportPanel({
                             handleExportPDF();
                             setShowFormatDropdown(false);
                           }}
-                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-750 transition-colors text-left"
+                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-700 transition-colors text-left"
                         >
                           <span className="text-2xl">📕</span>
                           <div className="flex-1">
@@ -401,7 +401,7 @@ export default function ExportPanel({
                             handleExportText();
                             setShowFormatDropdown(false);
                           }}
-                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-750 transition-colors text-left"
+                          className="w-full flex items-center gap-4 px-5 py-3.5 hover:bg-zinc-700 transition-colors text-left"
                         >
                           <span className="text-2xl">📓</span>
                           <div className="flex-1">
@@ -427,7 +427,7 @@ export default function ExportPanel({
                 
                 {/* Navigator carousel between selected items */}
                 <div className="flex items-center justify-between border-b border-zinc-700 pb-2">
-                  <span className="text-xs text-zinc-405 font-mono">
+                  <span className="text-xs text-zinc-400 font-mono">
                     {isFrench ? "RÉSEAUX SOCIAUX (Ajustement par extrait) :" : "PRESETS CAROUSEL FOR EACH ELEMENT:"}
                   </span>
                   
@@ -457,7 +457,7 @@ export default function ExportPanel({
                 </div>
 
                 {/* Excerpt current highlight citation placeholder */}
-                <div className="p-3 bg-zinc-850 rounded-lg text-xs italic text-zinc-300 border-l-2 border-gold max-h-20 overflow-y-auto">
+                <div className="p-3 bg-zinc-800 rounded-lg text-xs italic text-zinc-300 border-l-2 border-gold max-h-20 overflow-y-auto">
                   “ {activeExcerptForSocial.citation} ”
                 </div>
 
@@ -469,7 +469,7 @@ export default function ExportPanel({
                     type="button"
                     id="copy-twitter-format-btn"
                     onClick={handleCopyTwitter}
-                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-750 transition-all text-xs"
+                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-700 transition-all text-xs"
                   >
                     <div className="flex items-center gap-2.5">
                       <span className="text-cyan-400"><Twitter size={15} /></span>
@@ -483,7 +483,7 @@ export default function ExportPanel({
                     type="button"
                     id="copy-instagram-format-btn"
                     onClick={handleCopyInstagram}
-                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-750 transition-all text-xs"
+                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-700 transition-all text-xs"
                   >
                     <div className="flex items-center gap-2.5">
                       <span className="text-pink-400"><Instagram size={15} /></span>
@@ -497,7 +497,7 @@ export default function ExportPanel({
                     type="button"
                     id="copy-linkedin-format-btn"
                     onClick={handleCopyLinkedIn}
-                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-750 transition-all text-xs"
+                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-700 transition-all text-xs"
                   >
                     <div className="flex items-center gap-2.5">
                       <span className="text-blue-400"><Linkedin size={15} /></span>
@@ -511,7 +511,7 @@ export default function ExportPanel({
                     type="button"
                     id="copy-tiktok-format-btn"
                     onClick={handleCopyTikTok}
-                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-750 transition-all text-xs"
+                    className="flex items-center justify-between p-3.5 rounded-lg border border-zinc-700 bg-zinc-800 text-left hover:bg-zinc-700 transition-all text-xs"
                   >
                     <div className="flex items-center gap-2.5">
                       <span className="text-emerald-400"><MessageSquare size={15} /></span>

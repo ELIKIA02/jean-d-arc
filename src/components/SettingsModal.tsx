@@ -104,7 +104,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 placeholder={isFrench ? "Entrez votre clé d'API Mistral AI..." : "Enter your Mistral AI API key..."}
-                className="w-full rounded-lg border border-gold/30 bg-white/65 py-3 pl-4 pr-11 font-mono text-xs tracking-wider outline-hidden focus:border-royal focus:ring-2 focus:ring-royal/25 dark:bg-zinc-800/80 dark:focus:border-gold dark:focus:ring-gold/25"
+                className="w-full rounded-lg border border-gold/30 bg-white/65 py-3 pl-4 pr-11 font-mono text-xs tracking-wider outline-none focus:border-royal focus:ring-2 focus:ring-royal/25 dark:bg-zinc-800/80 dark:focus:border-gold dark:focus:ring-gold/25"
               />
               <button
                 type="button"
@@ -115,7 +115,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
                 {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
             </div>
-            <p className="flex items-start gap-1.5 text-xs text-zinc-505 dark:text-zinc-400 mt-1 leading-relaxed">
+            <p className="flex items-start gap-1.5 text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-relaxed">
               <Shield size={14} className="text-gold shrink-0 mt-0.5" />
               <span>
                 {isFrench 
@@ -135,7 +135,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
                 id="theme-select-element"
                 value={theme}
                 onChange={(e) => setThemeState(e.target.value as any)}
-                className="w-full rounded-lg border border-gold/30 bg-white/65 p-2.5 outline-hidden focus:border-royal dark:bg-zinc-850 dark:text-zinc-100"
+                className="w-full rounded-lg border border-gold/30 bg-white/65 p-2.5 outline-none focus:border-royal dark:bg-zinc-800 dark:text-zinc-100"
               >
                 <option value="medieval">⚜️ {isFrench ? "Papier Médiéval" : "Medieval Parchment"}</option>
                 <option value="clair">☀️ {isFrench ? "Clair Royal" : "Contemporary Light"}</option>
@@ -156,7 +156,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
                   className={`flex-1 rounded-lg py-2 font-bold transition-all ${
                     lang === 'FR' 
                       ? 'bg-royal text-white border-2 border-gold/80 dark:bg-gold dark:text-royal' 
-                      : 'bg-white/40 border border-zinc-300 dark:bg-zinc-850 dark:border-zinc-700'
+                      : 'bg-white/40 border border-zinc-300 dark:bg-zinc-800 dark:border-zinc-700'
                   }`}
                 >
                   FR
@@ -168,7 +168,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
                   className={`flex-1 rounded-lg py-2 font-bold transition-all ${
                     lang === 'EN' 
                       ? 'bg-royal text-white border-2 border-gold/80 dark:bg-gold dark:text-royal' 
-                      : 'bg-white/40 border border-zinc-300 dark:bg-zinc-850 dark:border-zinc-700'
+                      : 'bg-white/40 border border-zinc-300 dark:bg-zinc-800 dark:border-zinc-700'
                   }`}
                 >
                   ENG
@@ -199,7 +199,7 @@ export default function SettingsModal({ isOpen, onClose, onSettingsSaved }: Sett
               type="button"
               id="cancel-settings-btn"
               onClick={onClose}
-              className="rounded-lg px-4 py-2 text-sm text-zinc-650 hover:bg-zinc-150 dark:text-zinc-300 dark:hover:bg-zinc-800"
+              className="rounded-lg px-4 py-2 text-sm text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
             >
               {isFrench ? "Annuler" : "Cancel"}
             </button>

@@ -63,18 +63,16 @@ export default function QuoteCardGenerator({
   const [customText, setCustomText] = useState<string>('#1B263B');
   const [customAccent, setCustomAccent] = useState<string>('#D4AF37');
 
-  // Load elegant display Google Fonts dynamically
+  // Load elegant display Google Fonts dynamically (once only)
   useEffect(() => {
-    const fontsToLoad = [
-      'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600&family=Alex+Brush&display=swap'
-    ];
-
-    fontsToLoad.forEach(url => {
+    const fontUrl = 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;700&family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600&family=Alex+Brush&display=swap';
+    
+    if (!document.querySelector(`link[href="${fontUrl}"]`)) {
       const link = document.createElement('link');
-      link.href = url;
+      link.href = fontUrl;
       link.rel = 'stylesheet';
       document.head.appendChild(link);
-    });
+    }
   }, []);
 
   // Set up font options
@@ -370,14 +368,14 @@ export default function QuoteCardGenerator({
       <div className="relative w-full max-w-5xl rounded-3xl border border-gold/30 bg-white shadow-2xl dark:bg-zinc-900 overflow-hidden flex flex-col md:flex-row h-[94vh] md:h-[88vh] max-h-[95vh]">
         
         {/* LEFT COLUMN: INTERACTIVE PREVIEW */}
-        <div className="w-full md:flex-1 bg-zinc-100 dark:bg-zinc-950 p-4 md:p-6 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-zinc-200 dark:border-zinc-850 overflow-y-auto h-[40vh] md:h-full">
+        <div className="w-full md:flex-1 bg-zinc-100 dark:bg-zinc-950 p-4 md:p-6 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-zinc-200 dark:border-zinc-800 overflow-y-auto h-[40vh] md:h-full">
           
           <div className="w-full flex items-center justify-between mb-4 md:hidden">
             <span className="font-serif text-[11px] font-bold text-gold uppercase tracking-widest flex items-center gap-1">
               <Sparkles size={12} />
               {isFrench ? "Aperçu de la Carte" : "Card Preview"}
             </span>
-            <button onClick={onClose} className="rounded-full bg-white/80 p-2 text-zinc-400 hover:text-zinc-650 dark:bg-zinc-900">
+            <button onClick={onClose} className="rounded-full bg-white/80 p-2 text-zinc-400 hover:text-zinc-600 dark:bg-zinc-900">
               <X size={16} />
             </button>
           </div>
@@ -511,7 +509,7 @@ export default function QuoteCardGenerator({
                   {isFrench ? "Personnalisation" : "Design Suite"}
                 </h3>
               </div>
-              <button onClick={onClose} className="rounded-full bg-zinc-100 p-2 text-zinc-400 hover:text-zinc-650 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-all">
+              <button onClick={onClose} className="rounded-full bg-zinc-100 p-2 text-zinc-400 hover:text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-all">
                 <X size={16} />
               </button>
             </div>
@@ -528,7 +526,7 @@ export default function QuoteCardGenerator({
                   <Type size={11} />
                   {isFrench ? "Typographie & Police" : "Typography & Font"}
                 </label>
-                <div className="grid grid-cols-2 gap-1 px-1 py-1 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-850">
+                <div className="grid grid-cols-2 gap-1 px-1 py-1 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-800">
                   {FONTS.map((font) => (
                     <button
                       key={font.id}
@@ -559,7 +557,7 @@ export default function QuoteCardGenerator({
                       onClick={() => setSelectedTheme(theme.id)}
                       style={{ backgroundColor: theme.bgColor, color: theme.textColor, borderColor: theme.borderColor }}
                       className={`p-2 rounded-lg border relative text-left transition-all hover:scale-[1.01] flex flex-col justify-between h-12 ${
-                        selectedTheme === theme.id ? 'ring-2 ring-gold shadow-sm border-gold' : 'border-zinc-200/80 shadow-3xs dark:border-zinc-800'
+                        selectedTheme === theme.id ? 'ring-2 ring-gold shadow-sm border-gold' : 'border-zinc-200/80 shadow-sm dark:border-zinc-800'
                       }`}
                     >
                       <span 
@@ -583,7 +581,7 @@ export default function QuoteCardGenerator({
                 </div>
 
                 {/* Visual Free Color Palette */}
-                <div className="mt-2.5 p-2.5 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-850 space-y-2">
+                <div className="mt-2.5 p-2.5 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-2">
                   <label className="flex items-center gap-2 cursor-pointer text-[10px] font-sans font-bold text-royal dark:text-gold uppercase tracking-wider">
                     <input
                       type="checkbox"
@@ -602,7 +600,7 @@ export default function QuoteCardGenerator({
                           type="color"
                           value={customBg}
                           onChange={(e) => setCustomBg(e.target.value)}
-                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-750 rounded cursor-pointer p-0 bg-transparent"
+                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-700 rounded cursor-pointer p-0 bg-transparent"
                           title={isFrench ? "Couleur de fond" : "Background color"}
                         />
                       </div>
@@ -612,7 +610,7 @@ export default function QuoteCardGenerator({
                           type="color"
                           value={customText}
                           onChange={(e) => setCustomText(e.target.value)}
-                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-750 rounded cursor-pointer p-0 bg-transparent"
+                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-700 rounded cursor-pointer p-0 bg-transparent"
                           title={isFrench ? "Couleur du texte" : "Text color"}
                         />
                       </div>
@@ -622,7 +620,7 @@ export default function QuoteCardGenerator({
                           type="color"
                           value={customAccent}
                           onChange={(e) => setCustomAccent(e.target.value)}
-                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-750 rounded cursor-pointer p-0 bg-transparent"
+                          className="w-10 h-7 border border-zinc-300 dark:border-zinc-700 rounded cursor-pointer p-0 bg-transparent"
                           title={isFrench ? "Couleur des ornements" : "Accent color"}
                         />
                       </div>
@@ -638,7 +636,7 @@ export default function QuoteCardGenerator({
                   <Sliders size={11} />
                   {isFrench ? "Format & Taille d'Image" : "Format & Sizing"}
                 </label>
-                <div className="grid grid-cols-3 gap-1 bg-zinc-50 dark:bg-zinc-950 p-1 rounded-xl border border-zinc-200 dark:border-zinc-850">
+                <div className="grid grid-cols-3 gap-1 bg-zinc-50 dark:bg-zinc-950 p-1 rounded-xl border border-zinc-200 dark:border-zinc-800">
                   {RATIOS.map((ratio) => (
                     <button
                       key={ratio.id}
@@ -659,11 +657,11 @@ export default function QuoteCardGenerator({
 
             {/* PARTIE II: SIGNATURES MINIATURES (1, 2, 3) */}
             <div className="space-y-4 pt-1">
-              <span className="text-[10px] font-sans font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-850 pb-1">
+              <span className="text-[10px] font-sans font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-800 pb-1">
                 {isFrench ? "PARTIE II : INFORMATIONS (1, 2, 3)" : "PART II: CARD INFORMATIONS (1, 2, 3)"}
               </span>
 
-              <div className="bg-zinc-50 dark:bg-zinc-950 p-4 rounded-xl border border-gold/20 dark:border-zinc-850 space-y-4">
+              <div className="bg-zinc-50 dark:bg-zinc-950 p-4 rounded-xl border border-gold/20 dark:border-zinc-800 space-y-4">
                 
                 {/* 0. CORPS DE LA CITATION & ALIGNEMENT */}
                 <div className="space-y-1.5 pb-3 border-b border-zinc-200/50 dark:border-zinc-800/50">
@@ -675,15 +673,15 @@ export default function QuoteCardGenerator({
                     value={customCitation}
                     onChange={(e) => setCustomCitation(e.target.value)}
                     placeholder={isFrench ? "Saisir ou ajuster le texte de l'extrait" : "Type or adjust excerpt draft..."}
-                    className="w-full p-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-850 dark:text-zinc-100 transition-all font-sans"
+                    className="w-full p-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-all font-sans"
                   />
                   
                   {/* Selectable Align choices buttons */}
                   <div className="flex items-center justify-between pt-1">
-                    <span className="text-[9px] font-sans text-zinc-450 dark:text-zinc-550 font-bold uppercase tracking-wider">
+                    <span className="text-[9px] font-sans text-zinc-400 dark:text-zinc-300 font-bold uppercase tracking-wider">
                       {isFrench ? "Alignement" : "Text Align"}
                     </span>
-                    <div className="flex bg-zinc-100 dark:bg-zinc-900 p-0.5 rounded border border-zinc-205 dark:border-zinc-800">
+                    <div className="flex bg-zinc-100 dark:bg-zinc-900 p-0.5 rounded border border-zinc-200 dark:border-zinc-800">
                       {(['left', 'center', 'right'] as const).map((align) => (
                         <button
                           key={align}
@@ -723,7 +721,7 @@ export default function QuoteCardGenerator({
                     disabled={!showAuthor}
                     onChange={(e) => setCustomAuthor(e.target.value)}
                     placeholder={isFrench ? "Indiquer l'Auteur" : "Author Name"}
-                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-805 dark:text-zinc-100 transition-all ${
+                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-all ${
                       showAuthor ? 'border-zinc-200 dark:border-zinc-800' : 'border-zinc-100 dark:border-zinc-900/40 opacity-50 bg-zinc-100'
                     }`}
                   />
@@ -750,7 +748,7 @@ export default function QuoteCardGenerator({
                     disabled={!showSource}
                     onChange={(e) => setCustomTitle(e.target.value)}
                     placeholder={isFrench ? "Indiquer le Livre d'Origine" : "Book Title"}
-                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-805 dark:text-zinc-100 transition-all ${
+                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-all ${
                       showSource ? 'border-zinc-200 dark:border-zinc-800' : 'border-zinc-100 dark:border-zinc-900/40 opacity-50 bg-zinc-100'
                     }`}
                   />
@@ -768,7 +766,7 @@ export default function QuoteCardGenerator({
                     disabled={!showSource}
                     onChange={(e) => setCustomPage(e.target.value)}
                     placeholder={isFrench ? "Ex: 42 (ou Ch. III)" : "Ex: 42"}
-                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-805 dark:text-zinc-100 transition-all ${
+                    className={`w-full p-2 border rounded-lg text-xs bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 transition-all ${
                       showSource ? 'border-zinc-200 dark:border-zinc-800' : 'border-zinc-100 dark:border-zinc-900/40 opacity-50 bg-zinc-100'
                     }`}
                   />
@@ -779,14 +777,14 @@ export default function QuoteCardGenerator({
 
             {/* PARTIE III: OPTIONS SUPPLÉMENTAIRES */}
             <div className="space-y-2">
-              <span className="text-[10px] font-sans font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-850 pb-1">
+              <span className="text-[10px] font-sans font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-800 pb-1">
                 {isFrench ? "PARTIE III : AJUSTEMENTS VISUELS" : "PART III: VISUAL REFINEMENTS"}
               </span>
 
-              <div className="space-y-3 bg-zinc-50 dark:bg-zinc-950 p-4 rounded-xl border border-zinc-200 dark:border-zinc-850 text-xs">
+              <div className="space-y-3 bg-zinc-50 dark:bg-zinc-950 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 text-xs">
                 {/* Ornamental Head Option */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-serif font-medium text-zinc-650 dark:text-zinc-300">{isFrench ? "Ornement au sommet" : "Header Icon"}</span>
+                  <span className="font-serif font-medium text-zinc-600 dark:text-zinc-300">{isFrench ? "Ornement au sommet" : "Header Icon"}</span>
                   <select
                     value={showOrnament}
                     onChange={(e) => setShowOrnament(e.target.value)}
@@ -801,7 +799,7 @@ export default function QuoteCardGenerator({
 
                 {/* Text Size adjust slider */}
                 <div className="space-y-1">
-                  <div className="flex justify-between font-serif text-[11px] font-medium text-zinc-650 dark:text-zinc-300">
+                  <div className="flex justify-between font-serif text-[11px] font-medium text-zinc-600 dark:text-zinc-300">
                     <span>{isFrench ? "Taille de police citation" : "Text Sizing"}</span>
                     <span className="font-mono text-[10px] text-zinc-400">{fontSize}px</span>
                   </div>
@@ -817,7 +815,7 @@ export default function QuoteCardGenerator({
 
                 {/* Line height slider */}
                 <div className="space-y-1">
-                  <div className="flex justify-between font-serif text-[11px] font-medium text-zinc-650 dark:text-zinc-305">
+                  <div className="flex justify-between font-serif text-[11px] font-medium text-zinc-600 dark:text-zinc-300">
                     <span>{isFrench ? "Interligne global" : "Line Height"}</span>
                     <span className="font-mono text-[10px] text-zinc-400">{lineHeight}</span>
                   </div>

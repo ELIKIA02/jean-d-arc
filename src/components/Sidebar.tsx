@@ -46,7 +46,7 @@ export default function Sidebar({
         id="main-app-sidebar"
         className={`fixed top-0 bottom-0 left-0 z-30 flex w-72 flex-col border-r border-[#D4AF37]/30 bg-[#1E3A5F] text-white transition-transform duration-300 md:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } dark:bg-zinc-950 dark:border-zinc-850`}
+        } dark:bg-zinc-950 dark:border-zinc-800`}
       >
         {/* Branding header block */}
         <div className="flex flex-col items-center justify-center border-b border-white/10 py-6 px-4">

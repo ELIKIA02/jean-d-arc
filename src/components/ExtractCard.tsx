@@ -95,7 +95,7 @@ export default function ExtractCard({
             className={`rounded p-1 transition-all ${
               isPlaying 
                 ? 'text-gold bg-gold/10 animate-pulse' 
-                : 'text-zinc-400 hover:text-gold hover:bg-gold/10 dark:text-zinc-650'
+                : 'text-zinc-400 hover:text-gold hover:bg-gold/10 dark:text-zinc-600'
             }`}
             title={isPlaying ? (isFrench ? "Arrêter la lecture" : "Stop listening") : (isFrench ? "Écouter la citation" : "Listen aloud")}
           >
@@ -109,7 +109,7 @@ export default function ExtractCard({
             className={`rounded p-1 transition-all ${
               extrait.note 
                 ? 'text-gold bg-gold/5' 
-                : 'text-zinc-400 hover:text-gold hover:bg-gold/10 dark:text-zinc-650'
+                : 'text-zinc-400 hover:text-gold hover:bg-gold/10 dark:text-zinc-600'
             }`}
             title={isFrench ? "Ajouter/Modifier une réflexion" : "Add/Edit personal note"}
           >
@@ -119,7 +119,7 @@ export default function ExtractCard({
           <button
             id={`toggle-fav-card-${extrait.id}`}
             onClick={() => onToggleFavorite(extrait.id)}
-            className="rounded p-1 text-zinc-400 hover:text-rose-500 dark:text-zinc-650 hover:bg-rose-500/10 transition-all"
+            className="rounded p-1 text-zinc-400 hover:text-rose-500 dark:text-zinc-600 hover:bg-rose-500/10 transition-all"
             title={isFrench ? "Ajouter aux favoris" : "Add to favorites"}
           >
             <Heart size={14} className={isFavorite ? 'fill-rose-500 text-rose-500' : ''} />
@@ -132,7 +132,7 @@ export default function ExtractCard({
                 e.stopPropagation();
                 onGenerateCardImage(extrait);
               }}
-              className="rounded p-1 text-zinc-400 hover:text-gold dark:text-zinc-650 hover:bg-gold/10 transition-all animate-fadeIn"
+              className="rounded p-1 text-zinc-400 hover:text-gold dark:text-zinc-600 hover:bg-gold/10 transition-all animate-fadeIn"
               title={isFrench ? "Générer une carte de citation pour image" : "Generate Quote Card"}
             >
               <ImageIcon size={14} />
@@ -142,7 +142,7 @@ export default function ExtractCard({
           <button
             id={`toggle-select-checkbox-${extrait.id}`}
             onClick={() => onToggleSelect(extrait.id)}
-            className="text-zinc-450 hover:text-gold dark:text-zinc-600 transition-all font-semibold"
+            className="text-zinc-400 hover:text-gold dark:text-zinc-600 transition-all font-semibold"
           >
             {selected ? (
               <CheckSquare size={16} className="text-gold" />
@@ -179,7 +179,7 @@ export default function ExtractCard({
             onChange={(e) => setNoteValue(e.target.value)}
             placeholder={isFrench ? "Saisissez votre commentaire..." : "Write your own reflection..."}
             rows={2}
-            className="w-full text-xs p-2 rounded border border-gold/15 bg-white/90 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 outline-hidden focus:border-gold"
+            className="w-full text-xs p-2 rounded border border-gold/15 bg-white/90 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 outline-none focus:border-gold"
           />
         </div>
       )}
@@ -246,7 +246,7 @@ export default function ExtractCard({
       </div>
 
       {copied && (
-        <span className="absolute bottom-2 left-2 text-[9px] font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-250 rounded px-1 animate-pulse">
+        <span className="absolute bottom-2 left-2 text-[9px] font-semibold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 dark:text-emerald-400 border border-emerald-200 rounded px-1 animate-pulse">
           {isFrench ? "Copié !" : "Copied!"}
         </span>
       )}

@@ -124,7 +124,7 @@ JSON format:
 `;
 
         const geminiResponse = await ai.models.generateContent({
-          model: 'gemini-3.5-flash',
+          model: 'gemini-2.0-flash',
           contents: prompt,
           config: {
             responseMimeType: 'application/json',
@@ -252,7 +252,7 @@ app.post('/api/extract', async (req, res) => {
       console.log('Utilisation du moteur Gemini intégré par défaut...');
       try {
         const geminiResponse = await ai.models.generateContent({
-          model: 'gemini-3.5-flash',
+          model: 'gemini-2.0-flash',
           contents: prompt,
           config: {
             responseMimeType: 'application/json',

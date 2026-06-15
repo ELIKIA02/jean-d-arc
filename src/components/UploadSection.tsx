@@ -359,7 +359,7 @@ export default function UploadSection({
               className={`text-[10px] font-serif font-bold uppercase py-1.5 px-3.5 rounded-md transition-all flex items-center justify-center gap-1.5 ${
                 extractionMode === 'auto'
                   ? 'bg-royal text-white dark:bg-gold dark:text-royal shadow-sm'
-                  : 'text-zinc-500 hover:text-zinc-750 dark:hover:text-zinc-350'
+                  : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
               }`}
             >
               <span>🚀</span>
@@ -371,7 +371,7 @@ export default function UploadSection({
               className={`text-[10px] font-serif font-bold uppercase py-1.5 px-3.5 rounded-md transition-all flex items-center justify-center gap-1.5 ${
                 extractionMode === 'manual'
                   ? 'bg-royal text-white dark:bg-gold dark:text-royal shadow-sm'
-                  : 'text-zinc-500 hover:text-zinc-750 dark:hover:text-zinc-350'
+                  : 'text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300'
               }`}
             >
               <span>🎯</span>
@@ -438,7 +438,7 @@ export default function UploadSection({
                 <p className="text-zinc-700 font-serif font-medium dark:text-zinc-300">
                   {isFrench ? "Déposez votre livre ici, ou cliquez pour parcourir" : "Drag & drop your file here, or click to browse"}
                 </p>
-                <p className="text-xs text-zinc-450 mt-1.5 leading-relaxed">
+                <p className="text-xs text-zinc-400 mt-1.5 leading-relaxed">
                   PDF, DOCX, TXT ou MD (Max. 50 MB)
                 </p>
               </div>
@@ -488,7 +488,7 @@ export default function UploadSection({
                   onChange={(e) => setTitre(e.target.value)}
                   required
                   placeholder={isFrench ? "Ex: Les Misérables" : "Ex: Pride and Prejudice"}
-                  className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
+                  className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
                 />
               </div>
 
@@ -504,7 +504,7 @@ export default function UploadSection({
                   onChange={(e) => setAuteur(e.target.value)}
                   required
                   placeholder={isFrench ? "Ex: Victor Hugo" : "Ex: Jane Austen"}
-                  className="w-full rounded-lg border border-gold/30 bg-white/70 py-2 px-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-800 font-bold text-royal dark:text-gold"
+                  className="w-full rounded-lg border border-gold/30 bg-white/70 py-2 px-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 font-bold text-royal dark:text-gold"
                 />
               </div>
 
@@ -519,7 +519,7 @@ export default function UploadSection({
                     value={chapitre}
                     onChange={(e) => setChapitre(e.target.value)}
                     placeholder="Ex: Ch. 3"
-                    className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
+                    className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
                   />
                 </div>
 
@@ -533,7 +533,7 @@ export default function UploadSection({
                     value={pagesRange}
                     onChange={(e) => setPagesRange(e.target.value)}
                     placeholder="Ex: 40-52"
-                    className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
+                    className="w-full rounded-lg border border-gold/25 bg-white/50 py-2 px-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100"
                   />
                 </div>
               </div>
@@ -622,7 +622,7 @@ export default function UploadSection({
                   </div>
                 ) : (
                   <div className="flex-1 flex flex-col justify-center space-y-2.5 p-3 border border-gold/20 rounded-xl bg-gold/5 animate-fadeIn">
-                    <label className="block text-xs font-serif uppercase tracking-wider text-zinc-550 font-bold">
+                    <label className="block text-xs font-serif uppercase tracking-wider text-zinc-500 font-bold">
                       🎯 {isFrench ? "Choisir le chapitre d'étude :" : "Select Studied Chapter:"}
                     </label>
                     <select
@@ -634,7 +634,7 @@ export default function UploadSection({
                           setChapitre(match.title);
                         }
                       }}
-                      className="w-full rounded-lg border border-gold/25 bg-white py-2 px-3 text-xs outline-hidden focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-serif font-semibold shadow-xs"
+                      className="w-full rounded-lg border border-gold/25 bg-white py-2 px-3 text-xs outline-none focus:border-royal dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 font-serif font-semibold shadow-xs"
                     >
                       {chapters.map((ch) => (
                         <option key={ch.id} value={ch.id}>
@@ -642,7 +642,7 @@ export default function UploadSection({
                         </option>
                       ))}
                     </select>
-                    <p className="text-[10px] text-zinc-450 italic leading-relaxed">
+                    <p className="text-[10px] text-zinc-400 italic leading-relaxed">
                       💡 {isFrench 
                         ? "Idéal pour extraire des citations ultra-denses sur un passage précis d'un ouvrage."
                         : "Perfect for mining concentrated passages with targeted precision."}
@@ -715,7 +715,7 @@ export default function UploadSection({
                       className={`py-1.5 px-1 rounded-lg border text-[10px] font-serif font-bold uppercase transition-all flex items-center justify-center text-center leading-tight ${
                         isActive
                           ? 'bg-royal border-gold text-white dark:bg-gold dark:text-royal'
-                          : 'bg-zinc-50 border-zinc-250 text-zinc-650 hover:bg-gold/10 dark:bg-zinc-805/30 dark:border-zinc-700'
+                          : 'bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-gold/10 dark:bg-zinc-800/30 dark:border-zinc-700'
                       }`}
                     >
                       {isFrench ? p.labelFr : p.labelEn}
@@ -779,7 +779,7 @@ export default function UploadSection({
                             className={`px-2 py-0.5 rounded-full text-[10px] font-medium border transition-all ${
                               active 
                                 ? 'bg-royal border-gold text-white dark:bg-gold dark:text-royal' 
-                                : 'bg-white border-zinc-250 text-zinc-650 hover:bg-gold/10 dark:bg-zinc-800 dark:border-zinc-700'
+                                : 'bg-white border-zinc-200 text-zinc-600 hover:bg-gold/10 dark:bg-zinc-800 dark:border-zinc-700'
                             }`}
                           >
                             {isFrench ? thm.labelFr : thm.labelEn}
@@ -820,7 +820,7 @@ export default function UploadSection({
 
                   {/* Quality score */}
                   <div className="space-y-1">
-                    <div className="flex justify-between items-center text-[10px] font-serif uppercase tracking-widest text-zinc-550 font-semibold">
+                    <div className="flex justify-between items-center text-[10px] font-serif uppercase tracking-widest text-zinc-500 font-semibold">
                       <span>⭐ {isFrench ? "Score min." : "Min Quality"}</span>
                       <span className="font-mono text-royal font-bold bg-gold/10 dark:text-gold rounded px-1">{scoreMin}/10</span>
                     </div>
@@ -837,7 +837,7 @@ export default function UploadSection({
 
                   {/* Tone */}
                   <div className="space-y-1">
-                    <label className="block text-[10px] font-serif uppercase tracking-widest text-zinc-550 font-semibold">
+                    <label className="block text-[10px] font-serif uppercase tracking-widest text-zinc-500 font-semibold">
                       🎭 {isFrench ? "Tonalité" : "Creative Tone"}
                     </label>
                     <select

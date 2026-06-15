@@ -322,7 +322,7 @@ export default function App() {
         extraits: formattedElements,
       };
 
-      const freshHistory = [newHistoryItem, ...history.filter(h => h.metadata.titre !== meta.titre)].slice(0, 20);
+      const freshHistory = [newHistoryItem, ...history.filter(h => h.metadata.titre !== meta.titre || h.metadata.auteur !== meta.auteur)].slice(0, 20);
       setHistory(freshHistory);
       saveHistorique(freshHistory);
 
@@ -433,7 +433,7 @@ export default function App() {
               {state === 'PROCESSING' && (
                 <div className="rounded-2xl border border-gold/30 bg-white/70 p-12 text-center shadow-md dark:bg-zinc-900/80 max-w-2xl mx-auto space-y-6">
                   <div className="relative mx-auto h-24 w-24 flex items-center justify-center">
-                    <Loader2 className="animate-spin text-gold absolute inset-0 h-full w-full-custom" size={96} />
+                    <Loader2 className="animate-spin text-gold absolute inset-0 h-full w-full" size={96} />
                     <span className="text-3xl">⚜️</span>
                   </div>
                   
@@ -450,7 +450,7 @@ export default function App() {
 
                   {/* Progress bar */}
                   <div className="space-y-1 max-w-md mx-auto">
-                    <div className="h-2 w-full rounded-full bg-zinc-100 overflow-hidden border border-gold/15 dark:bg-zinc-805">
+                    <div className="h-2 w-full rounded-full bg-zinc-100 overflow-hidden border border-gold/15 dark:bg-zinc-800">
                       <div 
                         className="h-full bg-gold transition-all duration-300"
                         style={{ width: `${progressPercent}%` }}
@@ -477,7 +477,7 @@ export default function App() {
                     <h3 className="font-serif text-xl font-bold text-red-700 dark:text-red-400 uppercase">
                       {isFrench ? "Erreur de génération" : "Extraction Failed"}
                     </h3>
-                    <p className="text-sm text-zinc-650 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto">
+                    <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed max-w-lg mx-auto">
                       {error}
                     </p>
                   </div>
